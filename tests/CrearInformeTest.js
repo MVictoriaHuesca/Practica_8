@@ -47,10 +47,10 @@ export default async function () {
 
     sleep(1);
 
-    // se hace click al boton de view
-    const viewButton = page.locator('button[name="view"]');
+    // se hace click al icono del ojo
+    const ojoIcon = page.locator('button[name="view"]');
 
-    await Promise.all([page.waitForNavigation(), viewButton.click()]);
+    await Promise.all([page.waitForNavigation(), ojoIcon.click()]);
 
     sleep(1);
 

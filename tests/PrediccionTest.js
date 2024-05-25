@@ -47,10 +47,10 @@ export default async function () {
 
     sleep(1);
 
-    // se hace click al boton de view
-    const viewButton = page.locator('button[name="view"]');
+    // se hace click al icono del ojo
+    const ojoIcon = page.locator('button[name="view"]');
 
-    await Promise.all([page.waitForNavigation(), viewButton.click()]);
+    await Promise.all([page.waitForNavigation(), ojoIcon.click()]);
 
     sleep(1);
 
@@ -63,7 +63,7 @@ export default async function () {
 
     // se hace click al boton de predecir
 
-    // no encuentra button[name="predict"] ni con button[class="predict-button"]
+    // no encuentra button[name="predict"] ni button[class="predict-button"]
     // que es como supuestamente se llama el boton de predecir en el html de angular  
               //const predecirButton = page.locator('button[name="predict"]');
               //const predecirButton = page.locator('button[class="predict-button"]');
@@ -74,8 +74,6 @@ export default async function () {
     // hago un page.waitForTimeout(500) (500 = 500ms) ya que el texto de la prediccion 
     // tarda unos milisegundos en aparecer
     await Promise.all([predecirButton.click(), page.waitForTimeout(500)]);
-
-    sleep(1);
 
     // se comrpueba que se ha creado la prediccion comprobando que existe el texto
     // "Probabilidad de cáncer:" que en html es span[name="predict"]
